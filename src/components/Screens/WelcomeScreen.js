@@ -1,10 +1,10 @@
 import React from 'react';
 import {Image, StyleSheet, Text, TouchableOpacity, View,ScrollView,FlatList} from 'react-native';
-import MenuBar from '../../assets/Icons/menubar.svg';
-import Search from '../../assets/Icons/search.svg';
-import Cart from '../../assets/Icons/cart.svg';
 import Carousel from './Carousel';
 import Like from '../../assets/Icons/love.svg';
+import Header from '../Includes/Header';
+import Spotlight from './Spotlight';
+import Categories from './Categories';
 
 
 const WelcomeScreen = () => {
@@ -34,39 +34,11 @@ const WelcomeScreen = () => {
 //  },
 // ]
   return<>
-  <View style={styles.root}>
-   <View style={styles.header}>
-    <TouchableOpacity activeOpacity={0.8}>
-        <MenuBar width={27} height={27}/>
-    </TouchableOpacity>
-    <View style={styles.headerCartContainer}>
-        <TouchableOpacity activeOpacity={0.8} style={{marginRight:10}}>
-        <Search width={27} height={27}/>
-        </TouchableOpacity>
-        <TouchableOpacity activeOpacity={0.8}>
-        <Cart width={27} height={27}/>
-        </TouchableOpacity>
-    </View>
-  </View>
+  <Header/>
+  <ScrollView style={styles.root}  showsVerticalScrollIndicator={false}>
   <View style={styles.spotlight}>
-    <View style={styles.spotlightTitleContainer}>
-    <Text style={styles.spotlightTitle}>Find your style</Text>
-    <Image style={styles.spotlightImage} source={require('../../assets/Images/underline.png')} />
-    </View>
-    <View style={styles.category}>
-        <TouchableOpacity  activeOpacity={0.8} style={styles.categoryElement}>
-            <Text style={styles.categoryText}>All</Text>
-        </TouchableOpacity>
-        <TouchableOpacity activeOpacity={0.8} style={styles.categoryElement}>
-            <Text style={styles.categoryText}>Winter</Text>
-        </TouchableOpacity>
-        <TouchableOpacity activeOpacity={0.8} style={[styles.categoryElement,{backgroundColor:'#000'}]}>
-            <Text style={[styles.categoryText,{color:"#fff"}]}>Women</Text>
-        </TouchableOpacity>
-        <TouchableOpacity  activeOpacity={0.8} style={styles.categoryElement}>
-            <Text style={styles.categoryText}>Eyewear</Text>
-        </TouchableOpacity>
-    </View>
+    <Spotlight/>
+    <Categories/>
     {/* <ScrollView style={styles.featuredGallery} horizontal={true}>
         <TouchableOpacity style={[styles.galleryCard]}>
             <Image style={[styles.galleryImage,{ width:150,
@@ -136,80 +108,10 @@ const WelcomeScreen = () => {
         borderRadius:10}} />
         <Like width={25} height={25} style={{position:'absolute',top:25,right:20}}/>
            </TouchableOpacity>
-           <TouchableOpacity  activeOpacity={0.8} style={styles.singleItem} >
-            <Image source={require('../../assets/Images/amazing-woman.jpg')} style={{ width:150,
-        height:220,
-        resizeMode:'contain',
-        borderRadius:10}} />
-        <Like width={25} height={25} style={{position:'absolute',top:25,right:20}}/>
-           </TouchableOpacity>
-           <TouchableOpacity  activeOpacity={0.8} style={styles.singleItem} >
-            <Image source={require('../../assets/Images/amazing-woman.jpg')} style={{ width:150,
-        height:220,
-        resizeMode:'contain',
-        borderRadius:10}} />
-        <Like width={25} height={25} style={{position:'absolute',top:25,right:20}}/>
-           </TouchableOpacity>
-           <TouchableOpacity activeOpacity={0.8} style={styles.singleItem} >
-            <Image source={require('../../assets/Images/amazing-woman.jpg')} style={{ width:150,
-        height:220,
-        resizeMode:'contain',
-        borderRadius:10}} />
-        <Like width={25} height={25} style={{position:'absolute',top:25,right:20}}/>
-           </TouchableOpacity>
-           <TouchableOpacity activeOpacity={0.8} style={styles.singleItem} >
-            <Image source={require('../../assets/Images/amazing-woman.jpg')} style={{ width:150,
-        height:220,
-        resizeMode:'contain',
-        borderRadius:10}} />
-        <Like width={25} height={25} style={{position:'absolute',top:25,right:20}}/>
-           </TouchableOpacity>
-           <TouchableOpacity activeOpacity={0.8} style={styles.singleItem} >
-            <Image source={require('../../assets/Images/amazing-woman.jpg')} style={{ width:150,
-        height:220,
-        resizeMode:'contain',
-        borderRadius:10}} />
-        <Like width={25} height={25} style={{position:'absolute',top:25,right:20}}/>
-           </TouchableOpacity>
-           <TouchableOpacity activeOpacity={0.8} style={styles.singleItem} >
-            <Image source={require('../../assets/Images/amazing-woman.jpg')} style={{ width:150,
-        height:220,
-        resizeMode:'contain',
-        borderRadius:10}} />
-        <Like width={25} height={25} style={{position:'absolute',top:25,right:20}}/>
-           </TouchableOpacity>
-           <TouchableOpacity activeOpacity={0.8} style={styles.singleItem} >
-            <Image source={require('../../assets/Images/amazing-woman.jpg')} style={{ width:150,
-        height:220,
-        resizeMode:'contain',
-        borderRadius:10}} />
-        <Like width={25} height={25} style={{position:'absolute',top:25,right:20}}/>
-           </TouchableOpacity>
-           <TouchableOpacity activeOpacity={0.8} style={styles.singleItem} >
-            <Image source={require('../../assets/Images/amazing-woman.jpg')} style={{ width:150,
-        height:220,
-        resizeMode:'contain',
-        borderRadius:10}} />
-        <Like width={25} height={25} style={{position:'absolute',top:25,right:20}}/>
-           </TouchableOpacity>
-           <TouchableOpacity activeOpacity={0.8} style={styles.singleItem} >
-            <Image source={require('../../assets/Images/amazing-woman.jpg')} style={{ width:150,
-        height:220,
-        resizeMode:'contain',
-        borderRadius:10}} />
-        <Like width={25} height={25} style={{position:'absolute',top:25,right:20}}/>
-           </TouchableOpacity>
-           <TouchableOpacity activeOpacity={0.8} style={styles.singleItem} >
-            <Image source={require('../../assets/Images/amazing-woman.jpg')} style={{ width:150,
-        height:220,
-        resizeMode:'contain',
-        borderRadius:10}} />
-        <Like width={25} height={25} style={{position:'absolute',top:25,right:20}}/>
-           </TouchableOpacity>
         </ScrollView>
     </View>
   </View>
-  </View>
+  </ScrollView>
   </>
 };
 
@@ -218,50 +120,9 @@ const styles= StyleSheet.create({
     root:{
         height:'100%',
     },
-    header:{
-        paddingVertical:30,
-        paddingHorizontal:20,
-        flexDirection:'row',
-        justifyContent:'space-between',
-        alignItems:'center'
-    },
-    headerCartContainer:{
-        flexDirection:'row',
-        alignItems:'center'
-    },
     spotlight:{
         paddingHorizontal:20,
-    },
-    spotlightTitleContainer:{
-        position:'relative'
-    },
-    spotlightTitle:{
-        fontSize:25,
-        fontFamily:'Gordita-Regular',
-        color:"#000",
-    
-    },
-    spotlightImage:{
-        position:'absolute',
-        top:32.5,
-        left:100
-    },
-    category:{
-        flexDirection:'row',
-        alignItems:'center',
-        paddingHorizontal:10,
-        paddingVertical:30
-    },
-    categoryElement:{
-        borderWidth:1,
-        borderColor:'#dddddd',
-        borderRadius:8,
-        paddingHorizontal:10,
-        paddingVertical:9,
-        marginRight:15
-    },
-    categoryText:{
-        color:"#000"
+        backgroundColor:"#fff"
     },
     featuredGallery:{
         flexDirection:'row',

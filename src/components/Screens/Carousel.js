@@ -22,7 +22,7 @@ const windowWidth = useWindowDimensions().width
   return <View>
      <FlatList data={data} renderItem={({item})=>(
         <>
-       <TouchableOpacity style={{position:'relative'}}>
+       <TouchableOpacity style={{position:'relative'}}  activeOpacity={0.8}>
        <Image style={[styles.image,{width:windowWidth - 40}]} source={item.image}/>
        <Like width={25} height={25} style={{position:'absolute',top:18,right:90}}/>
         <Text style={{textAlign:'center',color:"#000"}}>{item.itemName}</Text>
