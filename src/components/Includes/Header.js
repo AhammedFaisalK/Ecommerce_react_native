@@ -24,7 +24,7 @@ const Header = () => {
 export default Header;
 const styles = StyleSheet.create({
     header:{
-        paddingVertical:30,
+        paddingVertical:20,
         paddingHorizontal:20,
         flexDirection:'row',
         justifyContent:'space-between',
