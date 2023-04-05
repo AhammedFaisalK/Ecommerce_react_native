@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text, View, TouchableOpacity, StyleSheet, Image} from 'react-native';
+import {Text, View, TouchableOpacity, StyleSheet, Image, Pressable} from 'react-native';
 import LeftArrow from '../../assets/Icons/left-arrow.svg';
 import Cart from '../../assets/Icons/cart.svg';
 import Minus from '../../assets/Icons/minus.svg';
@@ -72,8 +72,13 @@ const MyCart = () => {
     </View>
     <View style={styles.totalDetails}>
     <Text style={styles.total}>Total</Text>
-    <Text style={styles.totalAmount}>$ 226.97</Text>
+    <Text style={styles.totalAmount}>$ 346.97</Text>
     </View>
+  </View>
+  <View style={styles.checkoutButtonConatiner}>
+  <Pressable style={styles.checkoutButton}>
+      <Text style={styles.checkoutButtonText}>Checkout</Text>
+  </Pressable>
   </View>
   </View>
   )
@@ -162,27 +167,64 @@ const styles = StyleSheet.create({
 
     },
     shipAmountDetails:{
-
+      borderStyle:"dashed",
+      borderBottomWidth:1,
+      borderBottomColor:"#d5d5d5",
+      paddingBottom:15
     },
     subTotalDetails:{
-
+      flexDirection:"row",
+      justifyContent:'space-between',
+      alignItems:'center',
+  
     },
     subTotal:{
-
+      color:"#a3a3a3"
     },
     subTotalAmount:{
-
+      color:"#000"
     },
     shipTotalDetails:{
-
+      flexDirection:"row",
+      justifyContent:'space-between',
+      alignItems:'center'
     },
     shipping:{
+      color:"#a3a3a3"
 
     },
     shippingTotalAmount:{
-
+      color:"#000"
     },
     totalDetails:{
-      
+      flexDirection:"row",
+      justifyContent:'space-between',
+      alignItems:'center',
+      marginTop:10
+    },
+    total:{
+      color:"#a3a3a3"
+    },
+    totalAmount:{
+      color:"#000"
+    },
+    checkoutButtonConatiner:{
+      justifyContent:"center",
+      alignItems:'center',
+      marginTop:5,
+      backgroundColor:"#fff",
+    },
+    checkoutButton:{
+      justifyContent:"center",
+      alignItems:'center',
+      paddingVertical:10,
+      backgroundColor:"#000",
+      borderRadius:10,
+      width:'90%'
+    },
+    checkoutButtonText:{
+      paddingVertical:10,
+      fontSize:15,
+      color:"#fff"
     }
 })
