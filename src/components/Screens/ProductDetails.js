@@ -1,74 +1,123 @@
-import React from 'react';
-import {Text,StyleSheet,TouchableOpacity,View, Image} from 'react-native';
+import React, { useState } from 'react';
+import {Text,StyleSheet,TouchableOpacity,View, ScrollView,Image, Pressable} from 'react-native';
 import Like from '../../assets/Icons/love.svg';
+import Liked from '../../assets/Icons/lovefill.svg';
 import LeftArrow from '../../assets/Icons/left-arrow.svg';
 
 const ProductDetails = () => {
-  return  <View style={styles.root}>
+    const [active, setActive] = useState(1);
+    const [color, setColor] = useState(1);
+    const[favorite,setFavourite] = useState(false)
+    const sizeData = 
+    [
+        {
+            id:1,
+            sizeName:"S",
+
+        },
+        {
+            id:2,
+            sizeName:"M",
+        },
+        {
+            id:3,
+            sizeName:"L",
+        },
+        {
+            id:4,
+            sizeName:"XL",
+        },
+        {
+            id:5,
+            sizeName:"XXL",
+        }
+    ]
+
+    const productColor = [
+        {
+            id:1,
+            color:"",
+        },
+        {
+            id:2,
+            color:"#FB975D",
+        },
+        {
+            id:3,
+            color:"#C4B5B1",
+        },
+        {
+            id:4,
+            color:"#D6E1FD",
+        },
+        {
+            id:5,
+            color:'#F6D6FE',
+        },
+        {
+            id:6,
+            color:'#D5EEED',
+        },
+        {
+            id:7,
+            color:'#D9D9D9',
+        },
+        {
+            id:8,
+            color:'#FED6DF',
+        }
+    ]
+  return  <ScrollView style={styles.main}>
  <View style={styles.productHeader}>
   <TouchableOpacity activeOpacity={0.8}>
       <LeftArrow width={27} height={27}/>
   </TouchableOpacity>
-      <TouchableOpacity activeOpacity={0.8} >
+   {favorite ?    <TouchableOpacity activeOpacity={0.8} onPress={()=>setFavourite(false)} >
+      <Liked width={27} height={27}/>
+      </TouchableOpacity> :    <TouchableOpacity activeOpacity={0.8}  onPress={()=>setFavourite(true)}>
       <Like width={27} height={27}/>
-      </TouchableOpacity>
+      </TouchableOpacity>}
 </View>
 <View style={styles.productDetail}>
-<Text style={styles.spotlightTitle}>Beach Crochet Lace</Text>
-<Text style={[styles.spotlightTitle,{  marginBottom:20}]}>$ 39.99</Text>
+<Text style={styles.productTitle}>Beach Crochet Lace</Text>
+<Text style={[styles.productTitle,{  marginBottom:20}]}>$ 39.99</Text>
 <Image source={require('../../assets/Images/hanging-dress.jpg')} style={styles.productImage}/>
 </View>
 <View style={styles.sizes}>
 <Text style={styles.sizeHead}>Select Size</Text>
 <View  style={styles.sizesCont}>
-    <View style={[styles.size,{backgroundColor:"#FB975D"}]}>
-        <Text style={[styles.sizeTitle,{color:"#fff"}]}>S</Text>
-    </View>
-    <View style={styles.size}>
-        <Text style={styles.sizeTitle}>M</Text>
-    </View>
-    <View style={styles.size}>
-        <Text style={styles.sizeTitle}>L</Text>
-    </View>
-    <View style={styles.size}>
-        <Text style={styles.sizeTitle}>XL</Text>
-    </View>
-    <View style={styles.size}>
-        <Text style={styles.sizeTitle}>XXL</Text>
-    </View>
+    {sizeData.map((data)=>(
+          active === data.id ?   <TouchableOpacity style={[styles.size,{backgroundColor:"#FB975D"}]} onPress={()=>setActive(null)} key={data.id}  activeOpacity={0.8}>
+          <Text style={[styles.sizeTitle,{color:"#fff"}]}>{data.sizeName}</Text>
+      </TouchableOpacity> :    <TouchableOpacity style={[styles.size]} onPress={()=>setActive(data.id)}  key={data.id} activeOpacity={0.8}>
+          <Text style={[styles.sizeTitle]}>{data.sizeName}</Text>
+      </TouchableOpacity>
+    ))}
 </View>
 </View>
 <View style={[styles.sizes,{paddingBottom:15}]}>
-    <Text style={styles.sizeHead}>Select color</Text>
+    <Text style={styles.sizeHead}>Select Color</Text>
     <View style={styles.sizesCont} >
-    <View style={[styles.size,{borderColor:'#FB975D'}]}>
-    </View>
-    <View style={[styles.size,{backgroundColor:'#C4B5B1'}]}>
-    </View>
-    <View style={[styles.size,{backgroundColor:'#D6E1FD'}]}>
-    </View>
-    <View style={[styles.size,{backgroundColor:'#F6D6FE'}]}>
-    </View>
-    <View style={[styles.size,{backgroundColor:'#D5EEED'}]}>
-    </View>
-    <View style={[styles.size,{backgroundColor:'#D9D9D9'}]}>
-    </View>
-    <View style={[styles.size,{backgroundColor:'#FED6DF'}]}>
-    </View>
+        {productColor.map((product)=>(
+            color === product.id ?      <TouchableOpacity style={[styles.size,{borderColor:'#FB975D', backgroundColor:`${product.color}`}]} onPress={()=>setColor(null)}  key={product.id} activeOpacity={0.8}>
+            </TouchableOpacity> :     <TouchableOpacity style={[styles.size,{backgroundColor:`${product.color}`}]} onPress={()=>setColor(product.id)} key={product.id} activeOpacity={0.8}>
+                </TouchableOpacity>
+            
+        ))}
     </View>
 </View>
 <View style={styles.bottom}>
     <Text style={styles.price}>$ 39.99</Text>
-    <TouchableOpacity  style={styles.button}>
+    <Pressable  style={styles.button}>
       <Text style={styles.buttonText}>Add to cart</Text>
-  </TouchableOpacity>
+  </Pressable>
 </View>
-  </View>
+  </ScrollView>
 };
 
 export default ProductDetails;
 const styles= StyleSheet.create({
-    root:{
+    main:{
         height:'100%',
     },
     productHeader:{
@@ -81,11 +130,12 @@ const styles= StyleSheet.create({
     productDetail:{
         paddingHorizontal:30,
     },
-    spotlightTitle:{
+   productTitle:{
        textAlign:'center',
        marginBottom:5,
        fontSize:18,
-       color:"#000"
+       color:"#000",
+       fontWeight:"600"
     },
     productImage:{
         width:300,
@@ -97,7 +147,8 @@ const styles= StyleSheet.create({
         paddingTop:20,
     },
     sizeHead:{
-        color:"#000"
+        color:"#000",
+        fontWeight:"700"
     },
     sizesCont:{
         flexDirection:'row',
@@ -113,7 +164,7 @@ const styles= StyleSheet.create({
         marginRight:15
     },
     sizeTitle:{
-
+        color:"#000"
     },
     button:{
         justifyContent:"center",
@@ -137,6 +188,8 @@ const styles= StyleSheet.create({
         paddingTop:20,
     },
     price:{
-
+        fontSize:20,
+        color:"#000",
+        fontWeight:'bold'
     },
 })

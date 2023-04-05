@@ -2,6 +2,7 @@ import React from 'react';
 import {Text,View,Image, StyleSheet} from 'react-native';
 
 const Spotlight = () => {
+    
   return ( <View style={styles.spotlightTitleContainer}>
   <Text style={styles.spotlightTitle}>Find your style</Text>
   <Image style={styles.spotlightImage} source={require('../../assets/Images/underline.png')} />
@@ -23,6 +24,6 @@ const styles=StyleSheet.create({
     spotlightImage:{
         position:'absolute',
         top:32.5,
-        left:100
+        left:100, 
     },
 })

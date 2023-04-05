@@ -1,13 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {Text, View, TouchableOpacity, StyleSheet} from 'react-native';
 
 const Categories = () => {
+    const [activeCategory,setActiveCategory] =useState(3)
+    const productCategories = [{id:1,category:"All"},{id:2,category:"Winter"},{id:3,category:"Women"},{id:4,category:"Eyewear"}]
   return (
     <View style={styles.category}>
-    <TouchableOpacity  activeOpacity={0.8} style={styles.categoryElement}>
-        <Text style={styles.categoryText}>All</Text>
-    </TouchableOpacity>
-    <TouchableOpacity activeOpacity={0.8} style={styles.categoryElement}>
+        {productCategories.map((category)=>(
+            activeCategory === category.id ?   <TouchableOpacity  activeOpacity={0.8} style={[styles.categoryElement,{backgroundColor:'#000'}]} onPress={()=>setActiveCategory(null)} key={category.id}>
+            <Text style={[styles.categoryText,{color:"#fff"}]}>{category.category}</Text>
+        </TouchableOpacity> :   <TouchableOpacity  activeOpacity={0.8} style={styles.categoryElement}  onPress={()=>setActiveCategory(category.id)}  key={category.id}>
+               <Text style={styles.categoryText}>{category.category}</Text>
+           </TouchableOpacity>
+             
+        ))}
+    {/* <TouchableOpacity activeOpacity={0.8} style={styles.categoryElement}>
         <Text style={styles.categoryText}>Winter</Text>
     </TouchableOpacity>
     <TouchableOpacity activeOpacity={0.8} style={[styles.categoryElement,{backgroundColor:'#000'}]}>
@@ -15,7 +22,7 @@ const Categories = () => {
     </TouchableOpacity>
     <TouchableOpacity  activeOpacity={0.8} style={styles.categoryElement}>
         <Text style={styles.categoryText}>Eyewear</Text>
-    </TouchableOpacity>
+    </TouchableOpacity> */}
 </View>
   )
 };
@@ -27,7 +34,8 @@ const styles=StyleSheet.create({
         alignItems:'center',
         paddingHorizontal:10,
         paddingVertical:30,
-        backgroundColor:"#fff"
+        backgroundColor:"#fff",
+        marginTop:5
     },
     categoryElement:{
         borderWidth:1,
