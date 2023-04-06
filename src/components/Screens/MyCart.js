@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text, View, TouchableOpacity, StyleSheet, Image, Pressable} from 'react-native';
+import {Text, View, TouchableOpacity, StyleSheet, Image, Pressable,ScrollView} from 'react-native';
 import LeftArrow from '../../assets/Icons/left-arrow.svg';
 import Cart from '../../assets/Icons/cart.svg';
 import Minus from '../../assets/Icons/minus.svg';
@@ -11,7 +11,7 @@ import RightArrow from '../../assets/Icons/right-arrow.svg';
 
 const MyCart = () => {
   return (
-    <View>
+    <>
     <View style={styles.cartHeader}>
     <TouchableOpacity activeOpacity={0.8}>
         <LeftArrow width={27} height={27}/>
@@ -21,7 +21,9 @@ const MyCart = () => {
       <Cart width={27} height={27}/>
       </TouchableOpacity>
   </View>
-  <View style={styles.cartAddedItems}>
+    <View style={styles.cartMain}>
+   
+  <View style={styles.cartAddedItems} showsVerticalScrollIndicator={false}>
     <View style={styles.cartEachItem}>
       <View style={styles.cartAddContainer}>
         <Image  source={require('../../assets/Images/tshirt.jpeg')} style={styles.cartItemImage} />
@@ -54,12 +56,14 @@ const MyCart = () => {
       </View>
       <Delete width={20} height={20} />
     </View>
+    
   </View>
+
+  <View style={styles.cartAmountDetails} >
   <View style={styles.voucherContainer}>
     <Text style={styles.voucher}>Promo/Student Code Or Vouchers</Text>
     <RightArrow width={20} height={20} />
   </View>
-  <View style={styles.cartAmountDetails} >
     <View style={styles.shipAmountDetails}>
       <View  style={styles.subTotalDetails}>
         <Text style={styles.subTotal}>Sub Total</Text>
@@ -74,18 +78,25 @@ const MyCart = () => {
     <Text style={styles.total}>Total</Text>
     <Text style={styles.totalAmount}>$ 346.97</Text>
     </View>
-  </View>
-  <View style={styles.checkoutButtonConatiner}>
+    <View style={styles.checkoutButtonConatiner}>
   <Pressable style={styles.checkoutButton}>
       <Text style={styles.checkoutButtonText}>Checkout</Text>
   </Pressable>
   </View>
+
   </View>
+
+
+  </View>
+  </>
   )
 };
 
 export default MyCart;
 const styles = StyleSheet.create({
+  cartMain:{
+    height:"100%",
+  },
     cartHeader:{
         paddingVertical:20,
         paddingHorizontal:20,
@@ -102,7 +113,8 @@ const styles = StyleSheet.create({
     cartAddedItems:{
       paddingHorizontal:20,
       paddingTop:20,
-      backgroundColor:"#fff"
+      backgroundColor:"#fff",
+      flex:1
     },
     cartEachItem:{
       flexDirection:"row",
@@ -153,7 +165,7 @@ const styles = StyleSheet.create({
       justifyContent:"space-between",
       alignItems:"center",
       backgroundColor:"#fff",
-      paddingHorizontal:20,
+      // paddingHorizontal:20,
       paddingVertical:10,
     },
     voucher:{
@@ -164,7 +176,7 @@ const styles = StyleSheet.create({
       backgroundColor:"#fff",
       paddingHorizontal:20,
       paddingVertical:10,
-
+      flex:1
     },
     shipAmountDetails:{
       borderStyle:"dashed",
@@ -211,8 +223,9 @@ const styles = StyleSheet.create({
     checkoutButtonConatiner:{
       justifyContent:"center",
       alignItems:'center',
-      marginTop:5,
+      marginTop:30,
       backgroundColor:"#fff",
+ 
     },
     checkoutButton:{
       justifyContent:"center",

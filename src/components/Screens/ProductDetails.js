@@ -67,7 +67,7 @@ const ProductDetails = () => {
             color:'#FED6DF',
         }
     ]
-  return  <ScrollView style={styles.main}>
+  return  <View style={styles.main}>
  <View style={styles.productHeader}>
   <TouchableOpacity activeOpacity={0.8}>
       <LeftArrow width={27} height={27}/>
@@ -95,7 +95,7 @@ const ProductDetails = () => {
     ))}
 </View>
 </View>
-<View style={[styles.sizes,{paddingBottom:15}]}>
+<View style={[styles.sizes,{paddingTop:15}]}>
     <Text style={styles.sizeHead}>Select Color</Text>
     <View style={styles.sizesCont} >
         {productColor.map((product)=>(
@@ -112,7 +112,7 @@ const ProductDetails = () => {
       <Text style={styles.buttonText}>Add to cart</Text>
   </Pressable>
 </View>
-  </ScrollView>
+  </View>
 };
 
 export default ProductDetails;
@@ -140,7 +140,7 @@ const styles= StyleSheet.create({
     productImage:{
         width:300,
         height:250,
-        borderRadius:10
+        borderRadius:10,
     },
     sizes:{
         paddingHorizontal:30,
@@ -148,7 +148,7 @@ const styles= StyleSheet.create({
     },
     sizeHead:{
         color:"#000",
-        fontWeight:"700"
+        fontWeight:"700",
     },
     sizesCont:{
         flexDirection:'row',
@@ -186,6 +186,7 @@ const styles= StyleSheet.create({
         justifyContent:'space-between',
         paddingHorizontal:30,
         paddingTop:20,
+        flex:2
     },
     price:{
         fontSize:20,
