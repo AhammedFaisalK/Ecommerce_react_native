@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text, View, TouchableOpacity, StyleSheet, Image} from 'react-native';
+import {Text, View, TouchableOpacity, StyleSheet, Image, Pressable} from 'react-native';
 import BackArrow from '../../assets/Icons/left-arrow.svg';
 import Cross from '../../assets/Icons/cross-black.svg';
 import Location from '../../assets/Icons/location.svg';
@@ -8,7 +8,7 @@ import Forward from '../../assets/Icons/right-arrow.svg';
 
 
 const Checkout = () => {
-  return ( <View>
+  return ( <View style={styles.checkoutMain}>
       <View style={styles.checkoutHeader}>
     <TouchableOpacity activeOpacity={0.8}>
         <BackArrow width={27} height={27}/>
@@ -107,6 +107,40 @@ const Checkout = () => {
     </View>
     </View>
   </View>
+  <View style={styles.cartSection} >
+    <View style={styles.cartTitleCont}>
+        <Text style={styles.cartTitle}>My Cart</Text>
+        <Forward width={27} height={27}/>
+    </View>
+    <View style={styles.addedItems}>
+    <View style={styles.addedItem}>
+        <Image  source={require('../../assets/Images/tshirt.jpeg')} style={styles.addedItemImage} />
+        <View style={styles.addedItemDetails} >
+          <Text  style={styles.addedItemName} numberOfLines={2}>Casual Jeans & Shoes</Text>
+          <Text  style={styles.addedItemSize}>Size : M</Text>
+          <Text style={styles.addedItemPrice}><Text style={{color:'#faa97b'}}>$ </Text>178.99</Text>
+        </View>
+      </View>
+      <View style={styles.addedItem}>
+        <Image  source={require('../../assets/Images/tshirt.jpeg')} style={styles.addedItemImage} />
+        <View style={styles.addedItemDetails} >
+          <Text  style={styles.addedItemName} numberOfLines={2}>Casual Jeans & Shoes</Text>
+          <Text  style={styles.addedItemSize}>Size : M</Text>
+          <Text style={styles.addedItemPrice}><Text style={{color:'#faa97b'}}>$ </Text>178.99</Text>
+        </View>
+      </View>
+    </View>
+    <View style={styles.addedTotalAmountCont}>
+        <Text style={styles.addedTotal}>Total</Text>
+        <Text style={styles.addedTotalAmount}>$ 178.99</Text>
+    </View>
+    <View style={styles.paymentButtonConatiner}>
+  <Pressable style={styles.paymentButton}>
+      <Text style={styles.paymentButtonText}>Pay Now</Text>
+  </Pressable>
+  </View>
+
+  </View>
     
   </View>
   )
@@ -192,6 +226,89 @@ const styles = StyleSheet.create({
     },
     cardNumber:{
         color:"#dbd9da"
-    }
+    },
+    cartSection:{
+        backgroundColor:"#F6F4F5",
+        paddingHorizontal:20,
+    },
+    cartTitleCont:{
+        flexDirection:"row",
+        justifyContent:"space-between",
+        alignItems:"center",
+        marginBottom:20
+    },
+    cartTitle:{
+        fontSize:18,
+        color:'#000',
+      fontWeight:'500',
+    },
+    addedItems:{
+        flexDirection:"row",
+        justifyContent:"space-between",
+    },
+    addedItem:{
+        flexDirection:"row",
+        flex:1
+    },
+    addedItemImage:{
+        height:100,
+        width:50,
+        borderRadius:10,
+        resizeMode:'contain',
 
+    },
+    addedItemDetails:{
+        marginLeft:10
+    },
+    addedItemName:{
+        width:88,
+        fontSize:14,
+        fontWeight:"500",
+        lineHeight:25,
+        color:"#989898",
+        marginBottom:2
+    },
+    addedItemSize:{
+        fontSize:12,
+        fontWeight:"500",
+        color:'#c5c5c5',
+        marginBottom:12
+
+    },
+    addedItemPrice:{
+        fontSize:14,
+        fontWeight:"500",
+        color:'#000'
+    },
+    addedTotalAmountCont:{
+        flexDirection:'row',
+        justifyContent:'space-between',
+        alignItems:"center",
+        marginTop:20
+    },
+    addedTotal:{
+
+    },
+    addedTotalAmount:{
+
+    },
+    paymentButtonConatiner:{
+        justifyContent:"center",
+        alignItems:'center',
+        marginTop:30,
+    },
+    paymentButton:{
+        justifyContent:"center",
+        alignItems:'center',
+        paddingVertical:10,
+        backgroundColor:"#000",
+        borderRadius:10,
+        width:'90%'
+    },
+    paymentButtonText:{
+        paddingVertical:10,
+      fontSize:15,
+      color:"#fff"
+
+    }
 })
