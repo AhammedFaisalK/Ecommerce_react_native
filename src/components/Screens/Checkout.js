@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text, View, TouchableOpacity, StyleSheet, Image, Pressable} from 'react-native';
+import {Text, View, ScrollView,TouchableOpacity, StyleSheet, Image, Pressable} from 'react-native';
 import BackArrow from '../../assets/Icons/left-arrow.svg';
 import Cross from '../../assets/Icons/cross-black.svg';
 import Location from '../../assets/Icons/location.svg';
@@ -8,8 +8,11 @@ import Forward from '../../assets/Icons/right-arrow.svg';
 
 
 const Checkout = () => {
-  return ( <View style={styles.checkoutMain}>
-      <View style={styles.checkoutHeader}>
+  return ( 
+    <>  
+  <View style={styles.checkoutMain}>
+    <ScrollView>
+  <View style={styles.checkoutHeader}>
     <TouchableOpacity activeOpacity={0.8}>
         <BackArrow width={27} height={27}/>
     </TouchableOpacity>
@@ -132,30 +135,35 @@ const Checkout = () => {
     </View>
     <View style={styles.addedTotalAmountCont}>
         <Text style={styles.addedTotal}>Total</Text>
-        <Text style={styles.addedTotalAmount}>$ 178.99</Text>
+        <Text style={styles.addedTotalAmount}>$ 346.97</Text>
     </View>
-    <View style={styles.paymentButtonConatiner}>
+
+  </View>  
+  <View style={styles.paymentButtonConatiner}>
   <Pressable style={styles.paymentButton}>
       <Text style={styles.paymentButtonText}>Pay Now</Text>
   </Pressable>
   </View>
-
+  </ScrollView>  
   </View>
-    
-  </View>
+  </>
   )
 };
 
 export default Checkout;
 
 const styles = StyleSheet.create({
+    checkoutMain:{
+        height:"100%"
+    },
     checkoutHeader:{
         paddingVertical:20,
         paddingHorizontal:20,
         flexDirection:'row',
         justifyContent:'space-between',
         alignItems:'center',
-        backgroundColor:"#fff"
+        backgroundColor:"#fff",
+
     },
     checkoutHeaderText:{
       fontSize:20,
@@ -165,7 +173,7 @@ const styles = StyleSheet.create({
     paymentSection:{
         backgroundColor:"#F6F4F5",
         paddingHorizontal:20,
-        paddingVertical:20,
+        paddingTop:20,
     },
     deliverySection:{
     },
@@ -230,6 +238,8 @@ const styles = StyleSheet.create({
     cartSection:{
         backgroundColor:"#F6F4F5",
         paddingHorizontal:20,
+
+
     },
     cartTitleCont:{
         flexDirection:"row",
@@ -287,15 +297,18 @@ const styles = StyleSheet.create({
         marginTop:20
     },
     addedTotal:{
-
+        fontSize:16,
+        color:"#adadad",
+        fontWeight:'500'
     },
     addedTotalAmount:{
-
+        fontSize:18,
+        color:"#000",
     },
     paymentButtonConatiner:{
         justifyContent:"center",
         alignItems:'center',
-        marginTop:30,
+        marginTop:20,
     },
     paymentButton:{
         justifyContent:"center",
