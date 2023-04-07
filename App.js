@@ -4,6 +4,7 @@ import ProductDetails from './src/components/Screens/ProductDetails';
 import WelcomeScreen from './src/components/Screens/WelcomeScreen';
 import MyCart from './src/components/Screens/MyCart';
 import Checkout from './src/components/Screens/Checkout';
+import Signup from './src/components/Screens/Signup';
 
 
 const App = () => {
@@ -11,7 +12,8 @@ const App = () => {
 {/* <WelcomeScreen/> */}
 {/* <ProductDetails/> */}
 {/* <MyCart/> */}
-<Checkout/>
+{/* <Checkout/> */}
+<Signup/>
   </SafeAreaView>
 };
 

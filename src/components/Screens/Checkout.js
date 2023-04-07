@@ -11,7 +11,6 @@ const Checkout = () => {
   return ( 
     <>  
   <View style={styles.checkoutMain}>
-    <ScrollView>
   <View style={styles.checkoutHeader}>
     <TouchableOpacity activeOpacity={0.8}>
         <BackArrow width={27} height={27}/>
@@ -21,6 +20,7 @@ const Checkout = () => {
       <Cross width={25} height={25}/>
       </TouchableOpacity>
   </View>
+    <ScrollView showsVerticalScrollIndicator={false} >
   <View style={styles.paymentSection}>
     <View style={styles.deliverySection}>
         <Text style={styles.deliveryAddressTitle}>Delivery Address</Text>
@@ -139,12 +139,13 @@ const Checkout = () => {
     </View>
 
   </View>  
+
+  </ScrollView>  
   <View style={styles.paymentButtonConatiner}>
   <Pressable style={styles.paymentButton}>
       <Text style={styles.paymentButtonText}>Pay Now</Text>
   </Pressable>
   </View>
-  </ScrollView>  
   </View>
   </>
   )
@@ -304,11 +305,14 @@ const styles = StyleSheet.create({
     addedTotalAmount:{
         fontSize:18,
         color:"#000",
+        fontWeight:"500"
     },
     paymentButtonConatiner:{
         justifyContent:"center",
         alignItems:'center',
         marginTop:20,
+        marginBottom:20,
+        backgroundColor:"#f7f5f6"
     },
     paymentButton:{
         justifyContent:"center",
