@@ -58,11 +58,11 @@ const flatListUpdated = useCallback(({viewableItems})=>{
     ))}
     </View>
     <View style={styles.signupBottom}>
-      <View>
-        <Text>Tops</Text>
-        <Text>Tshirts</Text>
-        <Text>Hoodies</Text>
-        <Text>126+Categories</Text>
+      <View style={styles.dressesList}>
+        <Text style={[styles.Tops,styles.marginStyles]}>Tops <Text style={{color:"#f0ba7f",marginLeft:5}}>━</Text></Text>
+        <Text style={[styles.Tshirts,styles.marginStyles]}>Tshirts</Text>
+        <Text style={[styles.Hoodies,styles.marginStyles]}>Hoodies</Text>
+        <Text style={[styles.signupCategories,]}>126+Categories</Text>
       </View>
       <Pressable  style={styles.signUpButton}>
       <Text style={styles.signUpButtonText}>Sign Up</Text>
@@ -75,10 +75,11 @@ const flatListUpdated = useCallback(({viewableItems})=>{
 export default Signup;
 const styles=StyleSheet.create({
   signupRoot:{
+    height:'100%'
   },
   mainImage:{
     margin:10,
-      height:400,
+      height:500,
       resizeMode:'contain',
   },
   imagedot:{
@@ -93,7 +94,8 @@ const styles=StyleSheet.create({
   imagedots:{
     flexDirection:'row',
     alignItems:'center',
-    justifyContent:"center"
+    justifyContent:"center",
+    marginBottom:20
   },
   topTitle:{
     textAlign:'center',
@@ -125,25 +127,50 @@ const styles=StyleSheet.create({
     flexDirection:"row",
     justifyContent:"center",
     alignItems:'center',
-    paddingVertical:10,
+    paddingVertical:5,
     backgroundColor:"#000",
-    width:'50%'
+    width:'50%',
+    height:"80%",
+    borderTopRightRadius:8,
+    borderBottomRightRadius:8
     },
     signUpButtonText:{
         paddingVertical:5,
         fontSize:15,
-        color:"#fff"
-},
-signupRightArrow:{
-  fontSize:50,
-  color:"#fff"
+        color:"#fff",
+        marginRight:10
+
 },
 signupBottom:{
   flexDirection:'row',
   justifyContent:'space-between',
-
+  alignItems:"flex-end",
+  paddingHorizontal:20,
+  marginBottom:10
 },
 imageCarouselStyle:{
+  paddingHorizontal:10,
+  flex:1,
+},
+dressesList:{
 
+},
+Tops:{
+  color:"#b8b8b8"
+},
+Tshirts:{
+  color:"#b8b8b8"
+
+},
+Hoodies:{
+  color:"#b8b8b8"
+
+},
+signupCategories:{
+  color:"#b8b8b8"
+
+},
+marginStyles:{
+  marginBottom:2
 }
 })

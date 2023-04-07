@@ -9,11 +9,11 @@ import Signup from './src/components/Screens/Signup';
 
 const App = () => {
   return <SafeAreaView >
-{/* <WelcomeScreen/> */}
+<WelcomeScreen/>
 {/* <ProductDetails/> */}
 {/* <MyCart/> */}
 {/* <Checkout/> */}
-<Signup/>
+{/* <Signup/> */}
   </SafeAreaView>
 };
 

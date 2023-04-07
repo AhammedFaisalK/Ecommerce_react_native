@@ -3,17 +3,17 @@ import {Text,useWindowDimensions,StyleSheet, View,FlatList,Image, TouchableOpaci
 import Like from '../../assets/Icons/love.svg';
 const Carousel = () => {
     const data= [{
-        image:require('../../assets/Images/red-girl.jpg'),
+        image:require('../../assets/Images/summer-girl.png'),
         itemName:"Casual Jeans Shoes",
         itemPrice:"$178.99"
     },
     {
-        image:require('../../assets/Images/beach-girl.jpg'),
-        itemName:"Coktail Dress",
+        image:require('../../assets/Images/red-girl.jpg'),
+        itemName:"Beach Color",
         itemPrice:"$168.99"
     },
     {
-        image:require('../../assets/Images/red-girl.jpg'),
+        image:require('../../assets/Images/beach-girl.jpg'),
         itemName:"Coktail Dress",
         itemPrice:"$168.99"
     }
