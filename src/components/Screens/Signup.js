@@ -1,5 +1,6 @@
 import React, { useCallback, useState } from 'react';
-import {FlatList, Text, View, useWindowDimensions,Image, StyleSheet,TouchableOpacity} from 'react-native';
+import {FlatList, Text, View, useWindowDimensions,Image, StyleSheet,TouchableOpacity,Pressable} from 'react-native';
+import RightWhite  from '../../assets/Icons/right-arrowwhite.svg'
 
 const Signup = () => {
   const [activeDot, setActiveDot] = useState(0)
@@ -29,11 +30,11 @@ const flatListUpdated = useCallback(({viewableItems})=>{
   }
   console.log(viewableItems)
 },[])
-  return <View>
- <FlatList data={data}  renderItem={({item})=>(
+  return <View style={styles.signupRoot}>
+ <FlatList data={data} style={styles.imageCarouselStyle}  renderItem={({item})=>(
           <>
           <TouchableOpacity style={{position:'relative'}}  activeOpacity={0.8}>
-          <Image style={[styles.image,{width:windowWidth - 30}]} source={item.image}/>
+          <Image style={[styles.mainImage,{width:windowWidth - 30}]} source={item.image}/>
            <Text style={styles.mainTitle} numberOfLines={2}>{item.mainTitle}</Text>
            <Image source={item.highlightImage} style={styles.highlightImage}/>
            <View style={{ position:'absolute', transform: [{skewY: '-18deg'}],top:30,left:20}}>
@@ -51,28 +52,36 @@ const flatListUpdated = useCallback(({viewableItems})=>{
       viewAreaCoveragePercentThreshold:50,
     }}
     onViewableItemsChanged={flatListUpdated}/>
-      <View style={styles.dots}>
+      <View style={styles.imagedots}>
     {data.map((image,index)=>(
-    <View style={[styles.dot,{backgroundColor:index===activeDot?'#000':'#ededed'}]} key={index}></View>
+    <View style={[styles.imagedot,{backgroundColor:index===activeDot?'#000':'#ededed'}]} key={index}></View>
     ))}
     </View>
-    <View>
-      
+    <View style={styles.signupBottom}>
+      <View>
+        <Text>Tops</Text>
+        <Text>Tshirts</Text>
+        <Text>Hoodies</Text>
+        <Text>126+Categories</Text>
+      </View>
+      <Pressable  style={styles.signUpButton}>
+      <Text style={styles.signUpButtonText}>Sign Up</Text>
+      <RightWhite width={20} height={20}/>
+  </Pressable>
     </View>
   </View>
 };
 
 export default Signup;
 const styles=StyleSheet.create({
-  root:{
-
+  signupRoot:{
   },
-  image:{
+  mainImage:{
     margin:10,
-      height:500,
+      height:400,
       resizeMode:'contain',
   },
-  dot:{
+  imagedot:{
     width:10,
     height:10,
     borderRadius:25,
@@ -81,7 +90,7 @@ const styles=StyleSheet.create({
     backgroundColor:'#ededed',
     margin:5
   },
-  dots:{
+  imagedots:{
     flexDirection:'row',
     alignItems:'center',
     justifyContent:"center"
@@ -111,5 +120,30 @@ const styles=StyleSheet.create({
     position:'absolute',
     bottom:58,
     right:50
-  }
+  },
+  signUpButton:{
+    flexDirection:"row",
+    justifyContent:"center",
+    alignItems:'center',
+    paddingVertical:10,
+    backgroundColor:"#000",
+    width:'50%'
+    },
+    signUpButtonText:{
+        paddingVertical:5,
+        fontSize:15,
+        color:"#fff"
+},
+signupRightArrow:{
+  fontSize:50,
+  color:"#fff"
+},
+signupBottom:{
+  flexDirection:'row',
+  justifyContent:'space-between',
+
+},
+imageCarouselStyle:{
+
+}
 })
