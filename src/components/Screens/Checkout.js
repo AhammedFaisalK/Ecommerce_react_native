@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {Text, View, ScrollView,TouchableOpacity, StyleSheet, Image, Pressable} from 'react-native';
 import BackArrow from '../../assets/Icons/left-arrow.svg';
 import Cross from '../../assets/Icons/cross-black.svg';
@@ -8,6 +8,27 @@ import Forward from '../../assets/Icons/right-arrow.svg';
 
 
 const Checkout = () => {
+    const [selectedCard,setSelectedCard] = useState(1)
+    const paymentDetails=[
+        {
+            id:1,
+            cardImage:require('../../assets/Images/Master-Card.png'),
+            cardNumber:"... ...... 0758 4085",
+            cardName:"Master Card"
+        },
+        {
+            id:2,
+            cardImage:require('../../assets/Images/Apple-Pay.png'),
+            cardNumber:"... ...... 0758 4085",
+            cardName:"Apple Pay"
+        },
+        {
+            id:3,
+            cardImage:require('../../assets/Images/gg1.jpg'),
+            cardNumber:"... ...... 0758 4085",
+            cardName:"Google Pay"
+        }
+]
   return ( 
     <>  
   <View style={styles.checkoutMain}>
@@ -38,12 +59,13 @@ const Checkout = () => {
     <View style={styles.paymentMethods}>
     <Text style={styles.paymentMethodTitle}>Payment Method</Text>
     <View style={styles.paymentMethod}>
-        <View style={styles.cardDetails}>
+        {paymentDetails.map((payment)=>(
+            selectedCard === payment.id?   <TouchableOpacity activeOpacity={0.8} onPress={()=>setSelectedCard(null)} style={styles.cardDetails} key={payment.id}>
             <View style={styles.cardCredentials}>
-                <Image source={require('../../assets/Images/Master-Card.png')}/>
+                <Image source={payment.cardImage}/>
                 <View style={styles.cardType}>
-                    <Text style={styles.cardTypeName}>Master Card</Text>
-                    <Text  style={styles.cardNumber}>... ...... 0758 4085</Text>
+                    <Text style={styles.cardTypeName}>{payment.cardName}</Text>
+                    <Text  style={styles.cardNumber}>{payment.cardNumber}</Text>
                 </View>
             </View>
             <View style={[{
@@ -66,8 +88,32 @@ const Checkout = () => {
 
         }
       </View>
-        </View>
-        <View style={styles.cardDetails}>
+        </TouchableOpacity> :   <TouchableOpacity activeOpacity={0.8} onPress={()=>setSelectedCard(payment.id)} style={styles.cardDetails} key={payment.id}>
+                    <View style={styles.cardCredentials}>
+                        <Image source={payment.cardImage}/>
+                        <View style={styles.cardType}>
+                            <Text style={styles.cardTypeName}>{payment.cardName}</Text>
+                            <Text  style={styles.cardNumber}>{payment.cardNumber}</Text>
+                        </View>
+                    </View>
+                    <View style={[{
+        height: 24,
+        width: 24,
+        borderRadius: 12,
+        borderWidth: 2,
+        borderColor: '#c3c2c2',
+        alignItems: 'center',
+        justifyContent: 'center',
+      },]}>
+       
+      </View>
+                </TouchableOpacity>
+                  
+
+        ))}
+       
+
+        {/* <View style={styles.cardDetails}>
             <View style={styles.cardCredentials}>
                 <Image source={require('../../assets/Images/Apple-Pay.png')}/>
                 <View style={styles.cardType}>
@@ -86,8 +132,8 @@ const Checkout = () => {
       },]}>
        
       </View>
-        </View>
-        <View style={styles.cardDetails}>
+        </View> */}
+        {/* <View style={styles.cardDetails}>
             <View style={styles.cardCredentials}>
                 <Image source={require('../../assets/Images/gg.jpg')}/>
                 <View style={styles.cardType}>
@@ -106,7 +152,7 @@ const Checkout = () => {
       },]}>
        
       </View>
-        </View>
+        </View> */}
     </View>
     </View>
   </View>
