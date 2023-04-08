@@ -2,12 +2,28 @@
   "migIndex": 1,
   "data": [
     {
-      "path": "src/assets/Fonts/Gorditas-Bold.ttf",
-      "sha1": "b99424a885f19925fc61ca37e03b2de357d776f9"
+      "path": "src/assets/Fonts/Gordita Regular.otf",
+      "sha1": "3982ae21f4d084caaf453830d96250e18ff081b9"
     },
     {
-      "path": "src/assets/Fonts/Gorditas-Regular.ttf",
-      "sha1": "5ff4542b7c5cfc21895518c03019583675d38e28"
+      "path": "src/assets/Fonts/Gordita-Black.ttf",
+      "sha1": "a2ff77a27061f73f038510f23fad92bcd4a728a5"
+    },
+    {
+      "path": "src/assets/Fonts/Gordita-Bold.ttf",
+      "sha1": "b1e955e5a3649166734db4435c3284253e2d69d6"
+    },
+    {
+      "path": "src/assets/Fonts/Gordita-Light.ttf",
+      "sha1": "e46d9a26aee32dbb589bf678fc702f82b5757f96"
+    },
+    {
+      "path": "src/assets/Fonts/Gordita-Medium.ttf",
+      "sha1": "afe1fd54f56853ab1cbce0a494bf68cf67e384f1"
+    },
+    {
+      "path": "src/assets/Fonts/Gordita-Regular.ttf",
+      "sha1": "a251fe01bc633acec8b4565b3cf521fcaadd938e"
     }
   ]
 }

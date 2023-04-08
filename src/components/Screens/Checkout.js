@@ -111,48 +111,6 @@ const Checkout = () => {
                   
 
         ))}
-       
-
-        {/* <View style={styles.cardDetails}>
-            <View style={styles.cardCredentials}>
-                <Image source={require('../../assets/Images/Apple-Pay.png')}/>
-                <View style={styles.cardType}>
-                    <Text style={styles.cardTypeName}>Apple Pay</Text>
-                    <Text  style={styles.cardNumber}>... ...... 0758 4085</Text>
-                </View>
-            </View>
-            <View style={[{
-        height: 24,
-        width: 24,
-        borderRadius: 12,
-        borderWidth: 2,
-        borderColor: '#c3c2c2',
-        alignItems: 'center',
-        justifyContent: 'center',
-      },]}>
-       
-      </View>
-        </View> */}
-        {/* <View style={styles.cardDetails}>
-            <View style={styles.cardCredentials}>
-                <Image source={require('../../assets/Images/gg.jpg')}/>
-                <View style={styles.cardType}>
-                    <Text style={styles.cardTypeName}>Google Pay</Text>
-                    <Text  style={styles.cardNumber}>... ...... 0758 4085</Text>
-                </View>
-            </View>
-            <View style={[{
-        height: 24,
-        width: 24,
-        borderRadius: 12,
-        borderWidth: 2,
-        borderColor: '#c3c2c2',
-        alignItems: 'center',
-        justifyContent: 'center',
-      },]}>
-       
-      </View>
-        </View> */}
     </View>
     </View>
   </View>
@@ -213,9 +171,9 @@ const styles = StyleSheet.create({
 
     },
     checkoutHeaderText:{
-      fontSize:20,
+      fontSize:18,
+      fontFamily:"Gordita-Medium",
       color:'#000',
-      fontWeight:'500'
     },
     paymentSection:{
         backgroundColor:"#F6F4F5",
@@ -226,8 +184,8 @@ const styles = StyleSheet.create({
     },
     deliveryAddressTitle:{
         fontSize:18,
+        fontFamily:"Gordita-Medium",
         color:'#000',
-      fontWeight:'500',
         marginBottom:18
     },
     exactLocation:{
@@ -238,24 +196,24 @@ const styles = StyleSheet.create({
 
     },
     streetAddress:{
-        fontSize:18,
+        fontSize:17,
+        fontFamily:"Gordita-Medium",
         color:'#000',
-      fontWeight:'500',
         marginBottom:8
 
     },
     countryCode:{
-        fontSize:15,
+        fontSize:14,
+        fontFamily:"Gordita-Medium",
         color:"#d0d0d0",
-      fontWeight:'400',
     },
     paymentMethods:{
         marginTop:25
     },
     paymentMethodTitle:{
         fontSize:18,
+        fontFamily:"Gordita-Medium",
         color:'#000',
-      fontWeight:'500',
         marginBottom:18
     },
     paymentMethod:{
@@ -274,12 +232,14 @@ const styles = StyleSheet.create({
         marginLeft:20
     },
     cardTypeName:{
-        fontSize:18,
+        fontSize:17,
+        fontFamily:"Gordita-Medium",
         color:'#000',
-      fontWeight:'500',
       marginBottom:5
     },
     cardNumber:{
+        fontSize:14,
+        fontFamily:"Gordita-Medium",
         color:"#dbd9da"
     },
     cartSection:{
@@ -296,8 +256,8 @@ const styles = StyleSheet.create({
     },
     cartTitle:{
         fontSize:18,
+        fontFamily:"Gordita-Medium",
         color:'#000',
-      fontWeight:'500',
     },
     addedItems:{
         flexDirection:"row",
@@ -320,21 +280,21 @@ const styles = StyleSheet.create({
     addedItemName:{
         width:88,
         fontSize:14,
-        fontWeight:"500",
+        fontFamily:"Gordita-Medium",
         lineHeight:25,
         color:"#989898",
         marginBottom:2
     },
     addedItemSize:{
         fontSize:12,
-        fontWeight:"500",
+        fontFamily:"Gordita-Medium",
         color:'#c5c5c5',
         marginBottom:12
 
     },
     addedItemPrice:{
         fontSize:14,
-        fontWeight:"500",
+        fontFamily:"Gordita-Medium",
         color:'#000'
     },
     addedTotalAmountCont:{
@@ -344,14 +304,14 @@ const styles = StyleSheet.create({
         marginTop:20
     },
     addedTotal:{
-        fontSize:16,
+        fontSize:17,
+        fontFamily:"Gordita-Medium",
         color:"#adadad",
-        fontWeight:'500'
     },
     addedTotalAmount:{
-        fontSize:18,
+        fontSize:20,
+        fontFamily:"Gordita-Medium",
         color:"#000",
-        fontWeight:"500"
     },
     paymentButtonConatiner:{
         justifyContent:"center",
@@ -369,8 +329,9 @@ const styles = StyleSheet.create({
         width:'90%'
     },
     paymentButtonText:{
-        paddingVertical:10,
-      fontSize:15,
+     paddingVertical:10,
+      fontSize:18,
+      fontFamily:"Gordita-Medium",
       color:"#fff"
 
     }
