@@ -17,7 +17,7 @@ const styles=StyleSheet.create({
     },
     spotlightTitle:{
         fontSize:25,
-        fontFamily:'Gordita-Regular',
+        fontFamily:'Gordita-Medium',
         color:"#000",
     
     },

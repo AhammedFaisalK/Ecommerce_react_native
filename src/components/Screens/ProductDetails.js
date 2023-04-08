@@ -78,6 +78,7 @@ const ProductDetails = () => {
       <Like width={27} height={27}/>
       </TouchableOpacity>}
 </View>
+<ScrollView showsVerticalScrollIndicator={false}>
 <View style={styles.productDetail}>
 <Text style={styles.productTitle}>Beach Crochet Lace</Text>
 <Text style={[styles.productTitle,{  marginBottom:20}]}>$ 39.99</Text>
@@ -106,6 +107,7 @@ const ProductDetails = () => {
         ))}
     </View>
 </View>
+</ScrollView>
 <View style={styles.bottom}>
     <Text style={styles.price}>$ 39.99</Text>
     <Pressable  style={styles.button}>
@@ -134,8 +136,8 @@ const styles= StyleSheet.create({
        textAlign:'center',
        marginBottom:5,
        fontSize:18,
+    fontFamily:"Gordita-Medium",
        color:"#000",
-       fontWeight:"600"
     },
     productImage:{
         width:300,
@@ -147,8 +149,9 @@ const styles= StyleSheet.create({
         paddingTop:20,
     },
     sizeHead:{
+        fontSize:16,
+    fontFamily:"Gordita-Medium",
         color:"#000",
-        fontWeight:"700",
     },
     sizesCont:{
         flexDirection:'row',
@@ -164,6 +167,8 @@ const styles= StyleSheet.create({
         marginRight:15
     },
     sizeTitle:{
+        fontSize:14,
+    fontFamily:"Gordita-Medium",
         color:"#000"
     },
     button:{
@@ -177,7 +182,8 @@ const styles= StyleSheet.create({
         },
         buttonText:{
             paddingVertical:5,
-            fontSize:15,
+            fontSize:16,
+    fontFamily:"Gordita-Medium",
             color:"#fff"
     },
     bottom:{
@@ -186,11 +192,11 @@ const styles= StyleSheet.create({
         justifyContent:'space-between',
         paddingHorizontal:30,
         paddingTop:20,
-        flex:2
+        marginBottom:15,
     },
     price:{
-        fontSize:20,
+        fontSize:18,
+    fontFamily:"Gordita-Medium",
         color:"#000",
-        fontWeight:'bold'
     },
 })

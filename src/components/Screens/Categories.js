@@ -14,15 +14,6 @@ const Categories = () => {
            </TouchableOpacity>
              
         ))}
-    {/* <TouchableOpacity activeOpacity={0.8} style={styles.categoryElement}>
-        <Text style={styles.categoryText}>Winter</Text>
-    </TouchableOpacity>
-    <TouchableOpacity activeOpacity={0.8} style={[styles.categoryElement,{backgroundColor:'#000'}]}>
-        <Text style={[styles.categoryText,{color:"#fff"}]}>Women</Text>
-    </TouchableOpacity>
-    <TouchableOpacity  activeOpacity={0.8} style={styles.categoryElement}>
-        <Text style={styles.categoryText}>Eyewear</Text>
-    </TouchableOpacity> */}
 </View>
   )
 };
@@ -46,6 +37,8 @@ const styles=StyleSheet.create({
         marginRight:15
     },
     categoryText:{
+        fontSize:14,
+        fontFamily:'Gordita-Medium',
         color:"#000"
     },
 })

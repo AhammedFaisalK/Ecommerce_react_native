@@ -3,7 +3,7 @@ import {Text,useWindowDimensions,StyleSheet, View,FlatList,Image, TouchableOpaci
 import Like from '../../assets/Icons/love.svg';
 const Carousel = () => {
     const data= [{
-        image:require('../../assets/Images/summer-girl.png'),
+        image:require('../../assets/Images/summer.jpg'),
         itemName:"Casual Jeans Shoes",
         itemPrice:"$178.99"
     },
@@ -24,9 +24,10 @@ const windowWidth = useWindowDimensions().width
         <>
        <TouchableOpacity style={{position:'relative'}}  activeOpacity={0.8}>
        <Image style={[styles.image,{width:windowWidth - 40}]} source={item.image}/>
-       <Like width={25} height={25} style={{position:'absolute',top:18,right:90}}/>
-        <Text style={{textAlign:'center',color:"#000"}}>{item.itemName}</Text>
-        <Text style={{textAlign:'center',color:"#000",fontWeight:'bold'}}>{item.itemPrice}</Text>
+       <Like width={25} height={25} style={{position:'absolute',top:18,right:105}}/>
+   
+        <Text style={{textAlign:'center',color:"#000",fontFamily:"Gordita-Medium",fontSize:14}}>{item.itemName}</Text>
+        <Text style={{textAlign:'center',color:"#000",fontFamily:"Gordita-Medium",fontSize:16}}>{item.itemPrice}</Text>
        </TouchableOpacity>
         </>
     )}

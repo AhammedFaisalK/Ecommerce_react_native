@@ -10,8 +10,8 @@ import Signup from './src/components/Screens/Signup';
 
 const App = () => {
   return <SafeAreaView >
-{/* <WelcomeScreen/> */}
-<ProductDetails/>
+<WelcomeScreen/>
+{/* <ProductDetails/> */}
 {/* <MyCart/> */}
 {/* <Checkout/> */}
 {/* <Signup/> */}

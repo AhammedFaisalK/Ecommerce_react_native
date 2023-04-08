@@ -8,61 +8,17 @@ import Categories from './Categories';
 
 
 const WelcomeScreen = () => {
-//  const popularItems= [{
-//     id:1,
-//     image:require('../../assets/Images/hanging-dress.jpg'),
-//  },
-//  {
-//     id:2,
-//     image:require('../../assets/Images/amazing-woman.jpg'),
-//  },
-//  {
-//     id:3,
-//     image:require('../../assets/Images/amazing-woman.jpg'),
-//  },
-//  {
-//     id:4,
-//     image:require('../../assets/Images/amazing-woman.jpg'),
-//  },
-//  {
-//     id:5,
-//     image:require('../../assets/Images/amazing-woman.jpg'),
-//  },
-//  {
-//     id:6,
-//     image:require('../../assets/Images/amazing-woman.jpg'),
-//  },
-// ]
   return<>
   <Header/>
   <ScrollView style={styles.root}  showsVerticalScrollIndicator={false}>
   <View style={styles.spotlight}>
     <Spotlight/>
     <Categories/>
-    {/* <ScrollView style={styles.featuredGallery} horizontal={true}>
-        <TouchableOpacity style={[styles.galleryCard]}>
-            <Image style={[styles.galleryImage,{ width:150,
-        height:200}]} source={require('../../assets/Images/red-girl.jpg')} />
-            <Text>Coktail Dress</Text>
-            <Text>$168.99</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.galleryCard}>
-        <Image style={[styles.galleryImage]} source={require('../../assets/Images/red-girl.jpg')} />
-        <Text>Casual Jeans Shoes</Text>
-            <Text>$178.99</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.galleryCard}>
-        <Image style={[styles.galleryImage,{ width:150,
-        height:200}]} source={require('../../assets/Images/beach-girl.jpg')} />
-        <Text>Casual Jeans Shoes</Text>
-            <Text>$48.99</Text>
-        </TouchableOpacity>
-    </ScrollView> */}
     <Carousel/>
     <View style={styles.popular}>
         <View style={styles.popularHeading}>
             <Text style={styles.popularTitle}>Most Popular</Text>
-            <Text style={[styles.popularTitle,{fontSize:15}]}>See all</Text>
+            <Text style={[styles.popularTitle,{fontSize:14}]}>See all</Text>
         </View>
         <ScrollView contentContainerStyle={styles.popularItems} showsVerticalScrollIndicator={false}>
        
@@ -147,9 +103,8 @@ const styles= StyleSheet.create({
     },
     popularTitle:{
         fontSize:17,
-        fontFamily:'Gordita-Regular',
+        fontFamily:'Gordita-Medium',
         color:"#000",
-        fontWeight:'700'
     },
     popularItems:{
         flexDirection:'row',
