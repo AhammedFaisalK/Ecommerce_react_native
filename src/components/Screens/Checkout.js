@@ -46,7 +46,7 @@ const Checkout = () => {
     <View style={styles.deliverySection}>
         <Text style={styles.deliveryAddressTitle}>Delivery Address</Text>
         <View style={styles.exactLocation}>
-            <View style={{backgroundColor:"#fff",width:27,paddingVertical:10,paddingHorizontal:20, justifyContent:'center',alignItems:'center'}}>
+            <View style={{backgroundColor:"#fff",width:27,paddingVertical:10,paddingHorizontal:26, justifyContent:'center',alignItems:'center'}}>
             <Location width={27} height={27}/>
             </View>
             <View style={styles.locationContainer}>

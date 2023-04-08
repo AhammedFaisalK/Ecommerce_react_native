@@ -12,6 +12,7 @@ import RightArrow from '../../assets/Icons/right-arrow.svg';
 const MyCart = () => {
   return (
     <>
+    <View style={styles.cartMain}>
     <View style={styles.cartHeader}>
     <TouchableOpacity activeOpacity={0.8}>
         <LeftArrow width={27} height={27}/>
@@ -21,9 +22,8 @@ const MyCart = () => {
       <Cart width={27} height={27}/>
       </TouchableOpacity>
   </View>
-    <View style={styles.cartMain}>
-   
-  <View style={styles.cartAddedItems} showsVerticalScrollIndicator={false}>
+  <ScrollView showsVerticalScrollIndicator={false}>
+  <View style={styles.cartAddedItems} >
     <View style={styles.cartEachItem}>
       <View style={styles.cartAddContainer}>
         <Image  source={require('../../assets/Images/tshirt.jpeg')} style={styles.cartItemImage} />
@@ -45,7 +45,7 @@ const MyCart = () => {
         <Image  source={require('../../assets/Images/top.jpg')} style={styles.cartItemImage} />
         <View style={styles.cartItemDetails} >
           <Text  style={styles.cartItemName} numberOfLines={2}>Beach Crochet Lace</Text>
-          <Text  style={styles.cartItemSize}>Size : M</Text>
+          <Text  style={styles.cartItemSize}>Size : XL</Text>
           <Text style={styles.cartItemPrice}><Text style={{color:'#faa97b'}}>$ </Text>39.99</Text>
           <View style={styles.cartItemCountContainer}>
           <Minus width={27} height={27}/>
@@ -62,7 +62,7 @@ const MyCart = () => {
   <View style={styles.cartAmountDetails} >
   <View style={styles.voucherContainer}>
     <Text style={styles.voucher}>Promo/Student Code Or Vouchers</Text>
-    <RightArrow width={20} height={20} />
+    <RightArrow width={24} height={24} />
   </View>
     <View style={styles.shipAmountDetails}>
       <View  style={styles.subTotalDetails}>
@@ -78,15 +78,13 @@ const MyCart = () => {
     <Text style={styles.total}>Total</Text>
     <Text style={styles.totalAmount}>$ 346.97</Text>
     </View>
-    <View style={styles.checkoutButtonConatiner}>
+  </View>
+</ScrollView>
+  <View style={styles.checkoutButtonConatiner}>
   <Pressable style={styles.checkoutButton}>
       <Text style={styles.checkoutButtonText}>Checkout</Text>
   </Pressable>
   </View>
-
-  </View>
-
-
   </View>
   </>
   )
@@ -106,15 +104,15 @@ const styles = StyleSheet.create({
         backgroundColor:"#fff"
     },
     cartHeaderText:{
-      fontSize:20,
+      fontSize:18,
+      fontFamily:"Gordita-Medium",
       color:'#000',
-      fontWeight:'700'
     },
     cartAddedItems:{
       paddingHorizontal:20,
       paddingTop:20,
       backgroundColor:"#fff",
-      flex:1
+      // flex:1
     },
     cartEachItem:{
       flexDirection:"row",
@@ -135,20 +133,22 @@ const styles = StyleSheet.create({
       marginLeft:18
     },
     cartItemName:{
-      width:107.5,
+      width:115,
       fontSize:18,
+      fontFamily:"Gordita-Medium",
       lineHeight:25.5,
       color:"#000",
       marginBottom:5
     },
     cartItemSize:{
-      fontSize:16,
+      fontSize:14,
+      fontFamily:"Gordita-Medium",
       color:"#b3b3b3",
       marginBottom:5
-
     },
     cartItemPrice:{
       fontSize:18,
+      fontFamily:"Gordita-Medium",
       color:"#000"
     },
     cartItemCountContainer:{
@@ -157,6 +157,8 @@ const styles = StyleSheet.create({
       marginTop:15
     },
     cartItemCount:{
+      fontSize:16,
+      fontFamily:"Gordita-Medium",
       color:"#000",
       marginHorizontal:10
     },
@@ -169,18 +171,20 @@ const styles = StyleSheet.create({
       paddingVertical:10,
     },
     voucher:{
-      fontSize:16,
+      fontSize:17,
+      fontFamily:"Gordita-Medium",
       color:"#000"
     },
     cartAmountDetails:{
       backgroundColor:"#fff",
       paddingHorizontal:20,
       paddingVertical:10,
-      flex:1
+      // flex:1
     },
     shipAmountDetails:{
+      fontFamily:"Gordita-Medium",
       borderStyle:"dashed",
-      borderBottomWidth:1,
+      borderBottomWidth:2,
       borderBottomColor:"#d5d5d5",
       paddingBottom:15
     },
@@ -191,10 +195,14 @@ const styles = StyleSheet.create({
   
     },
     subTotal:{
+      fontSize:16,
+      fontFamily:"Gordita-Medium",
       color:"#a3a3a3"
     },
     subTotalAmount:{
-      color:"#000"
+      fontSize:20,
+      fontFamily:"Gordita-Medium",
+      color:"#000",
     },
     shipTotalDetails:{
       flexDirection:"row",
@@ -202,11 +210,15 @@ const styles = StyleSheet.create({
       alignItems:'center'
     },
     shipping:{
+      fontSize:16,
+      fontFamily:"Gordita-Medium",
       color:"#a3a3a3"
 
     },
     shippingTotalAmount:{
-      color:"#000"
+      fontSize:20,
+      fontFamily:"Gordita-Medium",
+      color:"#000",
     },
     totalDetails:{
       flexDirection:"row",
@@ -215,15 +227,19 @@ const styles = StyleSheet.create({
       marginTop:10
     },
     total:{
+      fontSize:16,
+      fontFamily:"Gordita-Medium",
       color:"#a3a3a3"
     },
     totalAmount:{
-      color:"#000"
+      fontSize:20,
+      fontFamily:"Gordita-Medium",
+      color:"#000",
     },
     checkoutButtonConatiner:{
       justifyContent:"center",
       alignItems:'center',
-      marginTop:30,
+      marginBottom:5,
       backgroundColor:"#fff",
  
     },
@@ -237,7 +253,8 @@ const styles = StyleSheet.create({
     },
     checkoutButtonText:{
       paddingVertical:10,
-      fontSize:15,
+      fontSize:17,
+      fontFamily:"Gordita-Medium",
       color:"#fff"
     }
 })

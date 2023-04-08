@@ -66,7 +66,7 @@ const flatListUpdated = useCallback(({viewableItems})=>{
       </View>
       <Pressable  style={styles.signUpButton}>
       <Text style={styles.signUpButtonText}>Sign Up</Text>
-      <RightWhite width={20} height={20}/>
+      <RightWhite width={25} height={25}/>
   </Pressable>
     </View>
   </View>
@@ -100,18 +100,17 @@ const styles=StyleSheet.create({
   topTitle:{
     textAlign:'center',
     fontSize:35,
+    fontFamily:"Gordita-Medium",
     color:"#000",
-    fontWeight:'500',
-
   },
   mainTitle:{
     textAlign:'center',
-    fontSize:40,
-    width:300,
+    fontSize:35,
+    fontFamily:"Gordita-Medium",
+    width:250,
     color:"#000",
-    fontWeight:'500',
     position:"absolute",
-    bottom:50,
+    bottom:85,
     right:4
 
   },
@@ -120,8 +119,8 @@ const styles=StyleSheet.create({
     width:30,
     resizeMode:'contain',
     position:'absolute',
-    bottom:58,
-    right:50
+    bottom:90,
+    right:30
   },
   signUpButton:{
     flexDirection:"row",
@@ -136,7 +135,8 @@ const styles=StyleSheet.create({
     },
     signUpButtonText:{
         paddingVertical:5,
-        fontSize:15,
+        fontSize:14,
+    fontFamily:"Gordita-Medium",
         color:"#fff",
         marginRight:10
 
@@ -156,17 +156,26 @@ dressesList:{
 
 },
 Tops:{
+  fontFamily:"Gordita-Regular",
+  fontSize:14,
   color:"#b8b8b8"
 },
 Tshirts:{
+  fontFamily:"Gordita-Regular",
+  fontSize:14,
   color:"#b8b8b8"
 
 },
 Hoodies:{
+  fontFamily:"Gordita-Regular",
+  fontSize:14,
   color:"#b8b8b8"
 
 },
 signupCategories:{
+  fontFamily:"Gordita-Regular",
+  fontSize:14,
+  textDecorationLine:'underline',
   color:"#b8b8b8"
 
 },
