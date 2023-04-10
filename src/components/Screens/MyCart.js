@@ -53,7 +53,7 @@ const MyCart = ({navigation}) => {
         <View style={styles.cartItemDetails} >
           <Text  style={styles.cartItemName} numberOfLines={2}>Casual Jeans & Shoes</Text>
           <Text  style={styles.cartItemSize}>Size : M</Text>
-          <Text style={styles.cartItemPrice}><Text style={{color:'#faa97b'}}>$ </Text>{(178.99*count1)}</Text>
+          <Text style={styles.cartItemPrice}><Text style={{color:'#faa97b'}}>$ </Text>{(Math.floor(178.99*count1))}</Text>
           <View style={styles.cartItemCountContainer}>
           <TouchableOpacity onPress={decrementPrice1} activeOpacity={0.8}><Minus width={27} height={27} /></TouchableOpacity>
           <Text style={styles.cartItemCount}>{count1}</Text>
@@ -69,7 +69,7 @@ const MyCart = ({navigation}) => {
         <View style={styles.cartItemDetails} >
           <Text  style={styles.cartItemName} numberOfLines={2}>Beach Crochet Lace</Text>
           <Text  style={styles.cartItemSize}>Size : XL</Text>
-          <Text style={styles.cartItemPrice}><Text style={{color:'#faa97b'}}>$ </Text>{(39.99*count2)}</Text>
+          <Text style={styles.cartItemPrice}><Text style={{color:'#faa97b'}}>$ </Text>{(Math.floor(39.99*count2))}</Text>
           <View style={styles.cartItemCountContainer}>
           <TouchableOpacity onPress={decrementPrice2} activeOpacity={0.8}><Minus width={27} height={27} /></TouchableOpacity>
           <Text style={styles.cartItemCount}>{count2}</Text>
