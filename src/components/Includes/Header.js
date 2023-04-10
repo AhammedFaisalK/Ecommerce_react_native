@@ -4,7 +4,8 @@ import MenuBar from '../../assets/Icons/menubar.svg';
 import Search from '../../assets/Icons/search.svg';
 import Cart from '../../assets/Icons/cart.svg';
 
-const Header = () => {
+
+const Header = ({navigation}) => {
   return  (  <View style={styles.header}>
   <TouchableOpacity activeOpacity={0.8}>
       <MenuBar width={27} height={27}/>
@@ -13,7 +14,7 @@ const Header = () => {
       <TouchableOpacity activeOpacity={0.8} style={{marginRight:10}}>
       <Search width={27} height={27}/>
       </TouchableOpacity>
-      <TouchableOpacity activeOpacity={0.8}>
+      <TouchableOpacity activeOpacity={0.8} onPress={()=>navigation.navigate('MyCart')}>
       <Cart width={27} height={27}/>
       </TouchableOpacity>
   </View>

@@ -7,7 +7,7 @@ import Forward from '../../assets/Icons/right-arrow.svg';
 
 
 
-const Checkout = () => {
+const Checkout = ({navigation}) => {
     const [selectedCard,setSelectedCard] = useState(1)
     const paymentDetails=[
         {
@@ -33,11 +33,11 @@ const Checkout = () => {
     <>  
   <View style={styles.checkoutMain}>
   <View style={styles.checkoutHeader}>
-    <TouchableOpacity activeOpacity={0.8}>
+    <TouchableOpacity activeOpacity={0.8} onPress={()=>navigation.navigate('MyCart')}>
         <BackArrow width={27} height={27}/>
     </TouchableOpacity>
     <Text style={styles.checkoutHeaderText}>Checkout</Text>
-      <TouchableOpacity activeOpacity={0.8}>
+      <TouchableOpacity activeOpacity={0.8} onPress={()=>navigation.navigate('WelcomeScreen')}>
       <Cross width={25} height={25}/>
       </TouchableOpacity>
   </View>

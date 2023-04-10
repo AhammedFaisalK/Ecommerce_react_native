@@ -7,9 +7,9 @@ import Spotlight from './Spotlight';
 import Categories from './Categories';
 
 
-const WelcomeScreen = () => {
+const WelcomeScreen = ({navigation}) => {
   return<>
-  <Header/>
+  <Header navigation ={navigation}/>
   <ScrollView style={styles.root}  showsVerticalScrollIndicator={false}>
   <View style={styles.spotlight}>
     <Spotlight/>
@@ -22,7 +22,7 @@ const WelcomeScreen = () => {
         </View>
         <ScrollView contentContainerStyle={styles.popularItems} showsVerticalScrollIndicator={false}>
        
-           <TouchableOpacity activeOpacity={0.8} style={styles.singleItem} >
+           <TouchableOpacity activeOpacity={0.8} style={styles.singleItem}  onPress={()=>navigation.navigate('AddCart')}>
             <Image source={require('../../assets/Images/hanging-dress.jpg')} style={{ width:150,
         height:220,
         resizeMode:'contain',

@@ -9,12 +9,12 @@ import RightArrow from '../../assets/Icons/right-arrow.svg';
 
 
 
-const MyCart = () => {
+const MyCart = ({navigation}) => {
   return (
     <>
     <View style={styles.cartMain}>
     <View style={styles.cartHeader}>
-    <TouchableOpacity activeOpacity={0.8}>
+    <TouchableOpacity activeOpacity={0.8} onPress={()=>navigation.navigate('WelcomeScreen')}>
         <LeftArrow width={27} height={27}/>
     </TouchableOpacity>
     <Text style={styles.cartHeaderText}>My Cart</Text>
@@ -81,7 +81,7 @@ const MyCart = () => {
   </View>
 </ScrollView>
   <View style={styles.checkoutButtonConatiner}>
-  <Pressable style={styles.checkoutButton}>
+  <Pressable style={styles.checkoutButton} onPress={()=>navigation.navigate('Checkout')}>
       <Text style={styles.checkoutButtonText}>Checkout</Text>
   </Pressable>
   </View>

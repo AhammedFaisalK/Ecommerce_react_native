@@ -2,7 +2,7 @@ import React, { useCallback, useState } from 'react';
 import {FlatList, Text, View, useWindowDimensions,Image, StyleSheet,TouchableOpacity,Pressable} from 'react-native';
 import RightWhite  from '../../assets/Icons/right-arrowwhite.svg'
 
-const Signup = () => {
+const Signup = ({navigation}) => {
   const [activeDot, setActiveDot] = useState(0)
   const data = [{
     image:require('../../assets/Images/slider-image.png'),
@@ -64,7 +64,7 @@ const flatListUpdated = useCallback(({viewableItems})=>{
         <Text style={[styles.Hoodies,styles.marginStyles]}>Hoodies</Text>
         <Text style={[styles.signupCategories,]}>126+Categories</Text>
       </View>
-      <Pressable  style={styles.signUpButton}>
+      <Pressable  style={styles.signUpButton} onPress={()=>navigation.navigate('WelcomeScreen')}>
       <Text style={styles.signUpButtonText}>Sign Up</Text>
       <RightWhite width={25} height={25}/>
   </Pressable>

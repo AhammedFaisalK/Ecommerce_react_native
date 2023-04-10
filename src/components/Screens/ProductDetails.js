@@ -4,7 +4,7 @@ import Like from '../../assets/Icons/love.svg';
 import Liked from '../../assets/Icons/lovefill.svg';
 import LeftArrow from '../../assets/Icons/left-arrow.svg';
 
-const ProductDetails = () => {
+const ProductDetails = ({navigation}) => {
     const [active, setActive] = useState(1);
     const [color, setColor] = useState(1);
     const[favorite,setFavourite] = useState(false)
@@ -69,7 +69,7 @@ const ProductDetails = () => {
     ]
   return  <View style={styles.main}>
  <View style={styles.productHeader}>
-  <TouchableOpacity activeOpacity={0.8}>
+  <TouchableOpacity activeOpacity={0.8} onPress={()=>navigation.navigate('WelcomeScreen')}>
       <LeftArrow width={27} height={27}/>
   </TouchableOpacity>
    {favorite ?    <TouchableOpacity activeOpacity={0.8} onPress={()=>setFavourite(false)} >
@@ -110,7 +110,7 @@ const ProductDetails = () => {
 </ScrollView>
 <View style={styles.bottom}>
     <Text style={styles.price}>$ 39.99</Text>
-    <Pressable  style={styles.button}>
+    <Pressable  style={styles.button} onPress={()=>navigation.navigate('MyCart')}>
       <Text style={styles.buttonText}>Add to cart</Text>
   </Pressable>
 </View>
