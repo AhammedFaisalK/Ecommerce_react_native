@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {Text, View, TouchableOpacity, StyleSheet, Image, Pressable,ScrollView} from 'react-native';
 import LeftArrow from '../../assets/Icons/left-arrow.svg';
 import Cart from '../../assets/Icons/cart.svg';
@@ -10,6 +10,29 @@ import RightArrow from '../../assets/Icons/right-arrow.svg';
 
 
 const MyCart = ({navigation}) => {
+  const [count1,SetCount1] = useState(1)
+  const [count2,SetCount2] = useState(1)
+
+  const IncrementPrice1 = ()=>(
+    count1 <1 ? SetCount1(1): 
+    SetCount1(count1+1)
+ 
+  )
+  const decrementPrice1 = ()=>(
+    count1 <=1? SetCount1(1): 
+    SetCount1(count1-1)
+ 
+  )
+  const IncrementPrice2 = ()=>(
+    count2 <1 ? SetCount2(1): 
+    SetCount2(count2+1)
+ 
+  )
+  const decrementPrice2 = ()=>(
+    count2 <1 ? SetCount2(1): 
+    SetCount2(count2-1)
+ 
+  )
   return (
     <>
     <View style={styles.cartMain}>
@@ -30,11 +53,11 @@ const MyCart = ({navigation}) => {
         <View style={styles.cartItemDetails} >
           <Text  style={styles.cartItemName} numberOfLines={2}>Casual Jeans & Shoes</Text>
           <Text  style={styles.cartItemSize}>Size : M</Text>
-          <Text style={styles.cartItemPrice}><Text style={{color:'#faa97b'}}>$ </Text>178.99</Text>
+          <Text style={styles.cartItemPrice}><Text style={{color:'#faa97b'}}>$ </Text>{(178.99*count1)}</Text>
           <View style={styles.cartItemCountContainer}>
-          <Minus width={27} height={27}/>
-          <Text style={styles.cartItemCount}>1</Text>
-          <Plus width={27} height={27}/>
+          <TouchableOpacity onPress={decrementPrice1} activeOpacity={0.8}><Minus width={27} height={27} /></TouchableOpacity>
+          <Text style={styles.cartItemCount}>{count1}</Text>
+           <TouchableOpacity onPress={IncrementPrice1} activeOpacity={0.8}><Plus width={27} height={27} /></TouchableOpacity>
           </View>
         </View>
       </View>
@@ -46,11 +69,11 @@ const MyCart = ({navigation}) => {
         <View style={styles.cartItemDetails} >
           <Text  style={styles.cartItemName} numberOfLines={2}>Beach Crochet Lace</Text>
           <Text  style={styles.cartItemSize}>Size : XL</Text>
-          <Text style={styles.cartItemPrice}><Text style={{color:'#faa97b'}}>$ </Text>39.99</Text>
+          <Text style={styles.cartItemPrice}><Text style={{color:'#faa97b'}}>$ </Text>{(178.99*count2)}</Text>
           <View style={styles.cartItemCountContainer}>
-          <Minus width={27} height={27}/>
-          <Text style={styles.cartItemCount}>1</Text>
-          <Plus width={27} height={27} />
+          <TouchableOpacity onPress={decrementPrice2} activeOpacity={0.8}><Minus width={27} height={27} /></TouchableOpacity>
+          <Text style={styles.cartItemCount}>{count2}</Text>
+          <TouchableOpacity onPress={IncrementPrice2} activeOpacity={0.8}><Plus width={27} height={27} /></TouchableOpacity>
           </View>
         </View>
       </View>
@@ -76,7 +99,7 @@ const MyCart = ({navigation}) => {
     </View>
     <View style={styles.totalDetails}>
     <Text style={styles.total}>Total</Text>
-    <Text style={styles.totalAmount}>$ 346.97</Text>
+    <Text style={styles.totalAmount}>$ {Math.floor((178.99 * count1+39.99*count2))}</Text>
     </View>
   </View>
 </ScrollView>
