@@ -1,10 +1,10 @@
 import React from 'react';
 import {Image, StyleSheet, Text, TouchableOpacity, View,ScrollView,FlatList} from 'react-native';
-import Carousel from './Carousel';
 import Like from '../../assets/Icons/love.svg';
 import Header from '../Includes/Header';
 import Spotlight from './Spotlight';
 import Categories from './Categories';
+import ImageCarousel from './ImageCarousel';
 
 
 const WelcomeScreen = ({navigation}) => {
@@ -14,7 +14,7 @@ const WelcomeScreen = ({navigation}) => {
   <View style={styles.spotlight}>
     <Spotlight/>
     <Categories/>
-    <Carousel/>
+    <ImageCarousel/>
     <View style={styles.popular}>
         <View style={styles.popularHeading}>
             <Text style={styles.popularTitle}>Most Popular</Text>
@@ -91,8 +91,6 @@ const styles= StyleSheet.create({
         borderRadius:10
     },
     galleryCard:{
-        // height:'60%',
-        // width:'80%'
     },
     popular:{
     },
